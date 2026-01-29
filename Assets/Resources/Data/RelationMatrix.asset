@@ -12,5 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a699052a0242a798aff6ae163b89c0, type: 3}
   m_Name: RelationMatrix
   m_EditorClassIdentifier: Assembly-CSharp::RelationMatrix.SymmetricRelationMatrix
-  relations: []
-  elements: 
+  relations:
+  - a: 0
+    b: 0
+    value: 0
+  - a: 0
+    b: 1
+    value: -1
+  - a: 1
+    b: 1
+    value: 0
+  - a: 0
+    b: 2
+    value: 1
+  - a: 1
+    b: 2
+    value: -1
+  - a: 2
+    b: 2
+    value: 0
+  elements: 000000000100000002000000
