@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GameEnums;
 using RelationMatrix;
 using Random = UnityEngine.Random;
@@ -38,11 +39,22 @@ namespace AIScripts
             // Bayesian update (increment observed hand)
             _possibilities[playerMove] += 1f;
         }
+
+        public void ProcessResult(RelationElement botPick, RelationElement playerPick, int result)
+        {
+            if (result != 1) return;
+            
+            //Bot win condition
+            var selfCounterPick = GetCounterPickAgainst(botPick);
+            _possibilities[selfCounterPick] += 1f; //Possibility increases that player can try to counter last move
+            _possibilities[playerPick] -= 1f; //Possibility that player chooses the same hand decreases
+            _possibilities[playerPick] = Math.Min(0, _possibilities[playerPick]); // no negative values
+        }
         
         public RelationElement ChooseMove()
         {
             var predictedPlayerMove = GetMostLikely(GetNormalizedProbabilities()); // Predict player's next move (arg max)
-            var bestCounter = GetCounterPicksAgainst(predictedPlayerMove); // Try to counter it or get a draw
+            var bestCounter = GetCounterPickAgainst(predictedPlayerMove); // Try to counter it or get a draw
             return Random.value < RandomnessFactor ? PickRandomHand() : bestCounter; //Randomly pick between a counter or a random pick
         }
 
@@ -81,7 +93,7 @@ namespace AIScripts
             return best;
         }
 
-        private RelationElement GetCounterPicksAgainst(RelationElement pick)
+        private RelationElement GetCounterPickAgainst(RelationElement pick)
         {
             var elements = _relationMatrix.Elements;
             
