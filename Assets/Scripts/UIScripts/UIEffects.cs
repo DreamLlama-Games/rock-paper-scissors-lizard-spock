@@ -1,0 +1,189 @@
+﻿using UnityEngine;
+
+namespace UIScripts
+{
+    public static class UIEffects
+    {
+        public static readonly RotateShake RotateShakeEffect = new();
+        public static readonly PulseInOut PulseInOutEffect = new();
+        public static readonly HoverFloat HoverFloatEffect = new();
+        
+        public class HoverFloat
+        {
+            public LTDescr StartHoverFloat(GameObject hoverFloatObject, HoverFloatInfo hoverFloatInfo)
+            {
+                var baseY = hoverFloatObject.transform.localPosition.y;
+                var minHeight = hoverFloatInfo.MinHoverHeight;
+                var maxHeight = hoverFloatInfo.MaxHoverHeight;
+                var cycleTime = hoverFloatInfo.HoverUpDuration + hoverFloatInfo.HoverDownDuration;
+
+                var tween = LeanTween.value(hoverFloatObject, 0f, cycleTime, cycleTime)
+                    .setLoopClamp()
+                    .setEaseLinear()
+                    .setOnUpdate(t =>
+                    {
+                        float yOffset;
+                        // Moving UP (min -> max)
+                        if (t <= hoverFloatInfo.HoverUpDuration)
+                        {
+                            var n = t / hoverFloatInfo.HoverUpDuration;
+                            yOffset = Mathf.Lerp(minHeight, maxHeight, EaseInOut(n));
+                        }
+                        // Moving DOWN (max -> min)
+                        else
+                        {
+                            var n = (t - hoverFloatInfo.HoverUpDuration) / hoverFloatInfo.HoverDownDuration;
+                            yOffset = Mathf.Lerp(maxHeight, minHeight, EaseInOut(n));
+                        }
+
+                        var localPos = hoverFloatObject.transform.localPosition;
+                        localPos.y = baseY + yOffset;
+                        hoverFloatObject.transform.localPosition = localPos;
+                    });
+                return tween;
+            }
+
+            // Soft hover feel
+            private float EaseInOut(float t)
+            {
+                return Mathf.SmoothStep(0f, 1f, t);
+            }
+
+            public void DisableHoverFloat(LTDescr tween)
+            {
+                if (tween != null)
+                    LeanTween.cancel(tween.id);
+            }
+        }
+        
+        public class PulseInOut
+        {
+            // Growing in size slowly and returning back to original size like a pulse
+            public LTDescr StartPulsingInOut(GameObject pulseObject, PulseInOutInfo pulseInfo)
+            {
+                var baseScale = pulseObject.transform.localScale;
+                var cycleTime = pulseInfo.PulseInTime + pulseInfo.PulseOutTime;
+
+                var tween = LeanTween.value(pulseObject, 0f, 1f, cycleTime)
+                    .setLoopClamp()
+                    .setRepeat(pulseInfo.PulseCount)
+                    .setOnUpdate(t =>
+                    {
+                        // IN phase
+                        if (t <= pulseInfo.PulseInTime / cycleTime)
+                        {
+                            var n = t / (pulseInfo.PulseInTime / cycleTime);
+                            pulseObject.transform.localScale = Vector3.Lerp(baseScale, baseScale * pulseInfo.PulseOutScale, n);
+                        }
+                        // OUT phase
+                        else
+                        {
+                            var n = (t - pulseInfo.PulseInTime / cycleTime) / (pulseInfo.PulseOutTime / cycleTime);
+                            pulseObject.transform.localScale = Vector3.Lerp(baseScale * pulseInfo.PulseOutScale, baseScale, n);
+                        }
+                    })
+                    .setOnComplete(() =>
+                    {
+                        pulseObject.transform.localScale = baseScale;
+                    });
+                return tween;
+            }
+
+            public void DisablePulsingInOut(LTDescr tween)
+            {
+                if (tween != null) LeanTween.cancel(tween.id);
+            }
+        }
+        
+        //Gives a small shake like effect (rattle)
+        public class RotateShake
+        {
+            public LTDescr StartRotateShake(GameObject shakeObject, RotateShakeInfo shakeInfo)
+            {
+                var baseZ = shakeObject.transform.eulerAngles.z;
+                var cycleTime = shakeInfo.Duration + shakeInfo.Gap;
+
+                var tween = LeanTween.value(shakeObject, 0f, cycleTime, cycleTime)
+                    .setDelay(shakeInfo.Gap)
+                    .setLoopClamp()
+                    .setLoopPingPong()
+                    .setOnUpdate(t =>
+                    {
+                        if (t <= shakeInfo.Duration)
+                        {
+                            // Normalize motion phase to 0..1
+                            var n = t / shakeInfo.Duration;
+
+                            // 0..1 -> left->right->center
+                            var wave = Mathf.Sin(n * Mathf.PI * 2f);
+                            shakeObject.transform.rotation = Quaternion.Euler(0, 0, baseZ + wave * shakeInfo.Angle);
+                        }
+                        else
+                        {
+                            // Pause phase → stay centered
+                            shakeObject.transform.rotation = Quaternion.Euler(0, 0, baseZ);
+                        }
+                    })
+                    .setOnComplete(() =>
+                    {
+                        var rot = shakeObject.transform.rotation;
+                        shakeObject.transform.rotation = Quaternion.Euler(rot.x, rot.y, baseZ);
+                    });
+
+                return tween;
+            }
+
+            public void DisableRotateShake(LTDescr tween)
+            {
+                if (tween != null) LeanTween.cancel(tween.id);
+            }
+        }
+        
+        public struct HoverFloatInfo
+        {
+            public float HoverUpDuration;
+            public float HoverDownDuration;
+
+            public float MinHoverHeight;
+            public float MaxHoverHeight;
+
+            public HoverFloatInfo(float  hoverUpDuration, float hoverDownDuration, float minHoverHeight, float maxHoverHeight)
+            {
+                HoverDownDuration = hoverDownDuration;
+                HoverUpDuration = hoverUpDuration;
+                MinHoverHeight = minHoverHeight;
+                MaxHoverHeight = maxHoverHeight;
+            }
+        }
+
+        public struct RotateShakeInfo
+        {
+            public readonly float Angle; //shake angle
+            public readonly float Duration; //full shake duration, left->right
+            public readonly float Gap; //gap between shakes
+
+            public RotateShakeInfo(float angle, float duration, float gap)
+            {
+                Angle = angle;
+                Duration = duration;
+                Gap = gap;
+            }
+        }
+        
+        public struct PulseInOutInfo
+        {
+            public readonly float PulseInTime;
+            public readonly float PulseOutTime;
+            public readonly float PulseOutScale;
+            public readonly int PulseCount;
+
+            public PulseInOutInfo(float pulseInTime, float pulseOutTime, float pulseOutScale, int pulseCount)
+            {
+                PulseInTime = pulseInTime;
+                PulseOutTime = pulseOutTime;
+                PulseOutScale = pulseOutScale;
+                PulseCount = pulseCount;
+            }
+        }
+    }
+}
