@@ -3,6 +3,7 @@ using EventManagerScripts;
 using GameEnums;
 using RelationMatrix;
 using TimerScripts;
+using UnityEngine;
 
 namespace GameLogicScripts
 {
@@ -18,7 +19,7 @@ namespace GameLogicScripts
         private RelationElement _playerMove;
 
         private TimerHandler _newRoundTimer;
-        private const float RoundResetDuration = 1.3f;
+        private const float RoundResetDuration = 2f;
 
         private GameEventManager _eventManager;
 
@@ -35,6 +36,12 @@ namespace GameLogicScripts
         {
             _eventManager?.Subscribe<RelationElement>(GameEvent.OptionSelected, OnPlayerMoveSelect);
             _eventManager?.Subscribe(GameEvent.FetchResults, OnFetchResults);
+            _eventManager?.Subscribe(GameEvent.TimerEnded, OnTimerEnded);
+        }
+
+        private void OnTimerEnded()
+        {
+            _eventManager?.Raise(GameEvent.PlayerLost, this,"Timer");
         }
 
         private void OnFetchResults()
@@ -53,10 +60,13 @@ namespace GameLogicScripts
                 _ => GameEvent.MatchTied
             };
             _eventManager?.Raise(outcomeEventName, this, winnerName);
+            PerformMoveAftermath(result);
 
             if (result == -1) return;
             
             SetPlayerScore(_playerScore + result);
+            UpdateHighScore();
+            
             if(result > 0) 
                 _eventManager?.Raise(GameEvent.ScoreUpdated, this, _playerScore);
             
@@ -81,6 +91,12 @@ namespace GameLogicScripts
         {
             SetPlayerScore(0);
             _bot.Initialize(_matrix);
+        }
+
+        private void UpdateHighScore()
+        {
+            var highScore = PlayerPrefs.GetInt("HighScore", 0);
+            if(_playerScore > highScore) PlayerPrefs.SetInt("HighScore", _playerScore);
         }
 
         private void SetPlayerScore(int playerScore)

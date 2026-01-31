@@ -2,9 +2,12 @@ using EventManagerScripts;
 using GameEnums;
 using GameLogicScripts;
 using RelationMatrix;
+using ScriptableObjectScripts;
 using TMPro;
 using UIScripts.UIViewHandlers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UIScripts
@@ -13,6 +16,11 @@ namespace UIScripts
     {
         [Header("Game logic")]
         [SerializeField] private SymmetricRelationMatrix matrix;
+        [SerializeField] private string mainMenuSceneName = "MainMenuScene";
+        
+        [Header("Image Data")]
+        [SerializeField] private SOButtonImageData buttonImageData;
+        [SerializeField] private SOMoveImageData moveImageData;
         
         [Header("Timer")]
         [SerializeField] private float timerDuration;
@@ -25,6 +33,7 @@ namespace UIScripts
         [Header("Win lose screen")]
         [SerializeField] private GameObject winLoseScreen;
         [SerializeField] private TMP_Text winLoseScreenText;
+        [SerializeField] private Button homeScreenButton;
         
         [Header("Moves")]
         [SerializeField] private GameObject playerMove;
@@ -76,9 +85,9 @@ namespace UIScripts
         private void InitializeHandlers()
         {
             _timerViewHandler.Initialize(_eventManager, timerSlider, timerDuration);
-            _optionCarouselHandler.Initialize(_eventManager, carouselParent, optionButtonPrefab, matrix.Elements);
-            _winLoseScreenHandler.Initialize(_eventManager, winLoseScreen, winLoseScreenText);
-            _moveViewHandler.Initialize(_eventManager, playerMove, opponentMove);
+            _optionCarouselHandler.Initialize(_eventManager, carouselParent, optionButtonPrefab, matrix.Elements, buttonImageData);
+            _winLoseScreenHandler.Initialize(_eventManager, winLoseScreen, winLoseScreenText, homeScreenButton);
+            _moveViewHandler.Initialize(_eventManager, playerMove, opponentMove, moveImageData);
             _resultViewHandler.Initialize(_eventManager, resultsText);
             _scoreViewHandler.Initialize(_eventManager, scoreViewParent, scoreViewText);
         }
@@ -88,15 +97,10 @@ namespace UIScripts
             _gameLogicHandler.Tick(Time.deltaTime);
             _timerViewHandler.Tick(Time.deltaTime);
         }
+        
+        public void LoadMainMenuScene()
+        {
+            SceneManager.LoadScene(mainMenuSceneName); 
+        }
     }
-    
-    // var hoverInfo = new UIEffects.HoverFloatInfo(1.2f, 1.6f, 20f, 100f);
-    // var shakeInfo = new UIEffects.RotateShakeInfo(5f,0.25f,0.4f);
-    // var pulseInfo = new UIEffects.PulseInOutInfo(0.12f, 0.4f, 1.5f, 3);
-    //         
-    // UIEffects.RotateShakeEffect.StartRotateShake(targetObject,shakeInfo);
-    // UIEffects.PulseInOutEffect.StartPulsingInOut(targetObject,pulseInfo);
-    // UIEffects.HoverFloatEffect.StartHoverFloat(targetObject, hoverInfo);
-    // UIEffects.MoveByEffect.StartMoveBy(targetObject, new UIEffects.MoveByInfo(0, 1800, 0.8f));
-    // UIEffects.AppearDisappearEffect.StartAppearing(targetObject.GetComponent<CanvasGroup>(), 0.8f); 
 }

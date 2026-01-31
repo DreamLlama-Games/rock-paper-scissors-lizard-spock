@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using EventManagerScripts;
 using GameEnums;
+using ScriptableObjectScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,14 +22,14 @@ namespace UIScripts.UIViewHandlers
         
         private GameEventManager _eventManager;
 
-        public void Initialize(GameEventManager eventManager, GameObject carouselParent, Button buttonPrefab, IReadOnlyList<RelationElement> elements)
+        public void Initialize(GameEventManager eventManager, GameObject carouselParent, Button buttonPrefab, IReadOnlyList<RelationElement> elements, SOButtonImageData buttonImageData)
         {
             _eventManager = eventManager;
             _buttonPrefab = buttonPrefab;
             _carouselParent = carouselParent;
             _optionButtonSpawner = new OptionButtonSpawner();
             
-            _buttons = _optionButtonSpawner.SpawnButtons(_carouselParent,_buttonPrefab, elements, _eventManager);
+            _buttons = _optionButtonSpawner.SpawnButtons(_carouselParent,_buttonPrefab, elements, buttonImageData, _eventManager);
             Subscribe();
         }
 

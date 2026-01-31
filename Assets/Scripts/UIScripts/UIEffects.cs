@@ -33,7 +33,7 @@ namespace UIScripts
                 var target = startLocalPos + new Vector3(moveByInfo.MoveX, moveByInfo.MoveY, 0f);
 
                 var tween = LeanTween.moveLocal(moveObject, target, moveByInfo.Duration)
-                    .setEaseInOutBounce();
+                    .setEaseInOutSine();
                 return tween;
             }
         }

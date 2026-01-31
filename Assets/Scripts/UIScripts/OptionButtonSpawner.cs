@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using EventManagerScripts;
 using GameEnums;
 using RelationMatrix;
+using ScriptableObjectScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,9 @@ namespace UIScripts
     {
         private SymmetricRelationMatrix _matrix;
 
-        public List<Button> SpawnButtons(GameObject buttonsParent, Button buttonPrefab, IReadOnlyList<RelationElement> elements, GameEventManager gameEventManager)
+        public List<Button> SpawnButtons(GameObject buttonsParent, Button buttonPrefab,
+            IReadOnlyList<RelationElement> elements, SOButtonImageData buttonImageData,
+            GameEventManager gameEventManager)
         {
             ClearExisting(buttonsParent);
             
@@ -25,6 +28,7 @@ namespace UIScripts
             {
                 var btn = Object.Instantiate(buttonPrefab, buttonsParent.transform);
                 btn.name = element.ToString();
+                btn.image.sprite = buttonImageData.GetSprite(element);
 
                 // Set label
                 var label = btn.GetComponentInChildren<TMP_Text>();
