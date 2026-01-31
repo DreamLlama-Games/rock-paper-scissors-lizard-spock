@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectScripts.SOButtonImageData
   sprites:
   - name: 0
-    sprite: {fileID: 21300000, guid: 5f7fa9a7940a64e79b5a42d9f661d42c, type: 3}
+    sprite: {fileID: -2189673970061530703, guid: fb753185c5f06384c9912b54852296f0, type: 3}
   - name: 1
-    sprite: {fileID: 21300000, guid: c4c548a339b4d41a590928c0c98934a7, type: 3}
+    sprite: {fileID: -7405935714452856971, guid: fb753185c5f06384c9912b54852296f0, type: 3}
   - name: 2
-    sprite: {fileID: -1825931381, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
-  - name: 2
-    sprite: {fileID: 21300000, guid: ef31bc3f46d6047b29ff513e55daf05b, type: 3}
-  - name: 2
-    sprite: {fileID: 21300000, guid: 492b9988436bd45049a9a6bc52ac8fb0, type: 3}
+    sprite: {fileID: 594762303656581759, guid: fb753185c5f06384c9912b54852296f0, type: 3}
+  - name: 3
+    sprite: {fileID: -8323492009064719497, guid: fb753185c5f06384c9912b54852296f0, type: 3}
+  - name: 4
+    sprite: {fileID: -7677349928880819071, guid: fb753185c5f06384c9912b54852296f0, type: 3}

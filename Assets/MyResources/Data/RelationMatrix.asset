@@ -31,4 +31,31 @@ MonoBehaviour:
   - a: 2
     b: 2
     value: 0
-  elements: 000000000100000002000000
+  - a: 0
+    b: 3
+    value: 1
+  - a: 1
+    b: 3
+    value: -1
+  - a: 2
+    b: 3
+    value: 1
+  - a: 3
+    b: 3
+    value: 0
+  - a: 0
+    b: 4
+    value: -1
+  - a: 1
+    b: 4
+    value: 1
+  - a: 2
+    b: 4
+    value: -1
+  - a: 3
+    b: 4
+    value: 1
+  - a: 4
+    b: 4
+    value: 0
+  elements: 0000000001000000020000000300000004000000

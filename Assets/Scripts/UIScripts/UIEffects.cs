@@ -97,13 +97,13 @@ namespace UIScripts
                         if (t <= pulseInfo.PulseInTime / cycleTime)
                         {
                             var n = t / (pulseInfo.PulseInTime / cycleTime);
-                            pulseObject.transform.localScale = Vector3.Lerp(baseScale, baseScale * pulseInfo.PulseOutScale, n);
+                            pulseObject.transform.localScale = Vector3.Lerp(baseScale, baseScale * pulseInfo.PulseOutScale, EaseInOut(n));
                         }
                         // OUT phase
                         else
                         {
                             var n = (t - pulseInfo.PulseInTime / cycleTime) / (pulseInfo.PulseOutTime / cycleTime);
-                            pulseObject.transform.localScale = Vector3.Lerp(baseScale * pulseInfo.PulseOutScale, baseScale, n);
+                            pulseObject.transform.localScale = Vector3.Lerp(baseScale * pulseInfo.PulseOutScale, baseScale, EaseInOut(n));
                         }
                     })
                     .setOnComplete(() =>
@@ -111,6 +111,12 @@ namespace UIScripts
                         pulseObject.transform.localScale = baseScale;
                     });
                 return tween;
+            }
+            
+            // Soft hover feel
+            private float EaseInOut(float t)
+            {
+                return Mathf.SmoothStep(0f, 1f, t);
             }
         }
         

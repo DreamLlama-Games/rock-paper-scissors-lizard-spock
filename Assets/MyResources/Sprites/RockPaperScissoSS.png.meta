@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: fb753185c5f06384c9912b54852296f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3956554767280519191
+    second: RockPaperScissoSS_0
+  - first:
+      213: 422543215637908249
+    second: RockPaperScissoSS_1
+  - first:
+      213: 6041559322982427550
+    second: RockPaperScissoSS_2
+  - first:
+      213: 891323565298567963
+    second: RockPaperScissoSS_3
+  - first:
+      213: -6121493905017923888
+    second: RockPaperScissoSS_4
+  - first:
+      213: -6395154396070288847
+    second: RockPaperScissoSS_5
+  - first:
+      213: -423487582306874384
+    second: RockPaperScissoSS_6
+  - first:
+      213: -5465287543036820972
+    second: RockPaperScissoSS_7
+  - first:
+      213: 1846326380073408552
+    second: RockPaperScissoSS_8
+  - first:
+      213: 5848838878752329416
+    second: RockPaperScissoSS_9
+  - first:
+      213: -2447696487689019899
+    second: RockPaperScissoSS_10
+  - first:
+      213: 6700119553319660673
+    second: RockPaperScissoSS_11
+  - first:
+      213: 4221160710758838127
+    second: RockPaperScissoSS_12
+  - first:
+      213: -3806377327553170669
+    second: RockPaperScissoSS_13
+  - first:
+      213: -6300854448450560312
+    second: RockPaperScissoSS_14
+  - first:
+      213: 5905657430670104011
+    second: RockPaperScissoSS_15
+  - first:
+      213: 3330942898743418029
+    second: RockPaperScissoSS_16
+  - first:
+      213: -6252621963685705264
+    second: RockPaperScissoSS_17
+  - first:
+      213: 4026984140927675857
+    second: RockPaperScissoSS_18
+  - first:
+      213: -2126178399722325490
+    second: RockPaperScissoSS_19
+  - first:
+      213: 7627909636923764234
+    second: RockPaperScissoSS_20
+  - first:
+      213: 2896567551126412713
+    second: RockPaperScissoSS_21
+  - first:
+      213: -144680207392210766
+    second: RockPaperScissoSS_22
+  - first:
+      213: 874041540710463020
+    second: RockPaperScissoSS_23
+  - first:
+      213: 2857341277739274154
+    second: RockPaperScissoSS_24
+  - first:
+      213: 509046539466458399
+    second: RockPaperScissoSS_25
+  - first:
+      213: -7270909771597748031
+    second: RockPaperScissoSS_26
+  - first:
+      213: -2189673970061530703
+    second: RockPaperScissoSS_27
+  - first:
+      213: -7405935714452856971
+    second: RockPaperScissoSS_28
+  - first:
+      213: 594762303656581759
+    second: RockPaperScissoSS_29
+  - first:
+      213: -8323492009064719497
+    second: RockPaperScissoSS_30
+  - first:
+      213: -7677349928880819071
+    second: RockPaperScissoSS_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RockPaperScissoSS_0
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 806
+        width: 403
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7cdd1e66e7719c0800000000000000
+      internalID: -3956554767280519191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_1
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 810
+        width: 369
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b495ed0dc2dd500800000000000000
+      internalID: 422543215637908249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_2
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 808
+        width: 403
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b21d7d13ee7d350800000000000000
+      internalID: 6041559322982427550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 466
+        width: 280
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b4e896f0e9e5c00800000000000000
+      internalID: 891323565298567963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_4
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 470
+        width: 300
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d610b8f9b51c0ba0800000000000000
+      internalID: -6121493905017923888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_5
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 459
+        width: 288
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132e372b5f8df37a0800000000000000
+      internalID: -6395154396070288847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_27
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 147
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b920982027bc91e0800000000000000
+      internalID: -2189673970061530703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_28
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 147
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f98aeb4b4d83990800000000000000
+      internalID: -7405935714452856971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_29
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 147
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a5e3bf925014800800000000000000
+      internalID: 594762303656581759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_30
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 147
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b15e41e140d7c80800000000000000
+      internalID: -8323492009064719497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockPaperScissoSS_31
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 147
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18430b08ae2947590800000000000000
+      internalID: -7677349928880819071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6f33998588fb1274982e7a764be4a781
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RockPaperScissoSS_0: -3956554767280519191
+      RockPaperScissoSS_1: 422543215637908249
+      RockPaperScissoSS_10: -2447696487689019899
+      RockPaperScissoSS_11: 6700119553319660673
+      RockPaperScissoSS_12: 4221160710758838127
+      RockPaperScissoSS_13: -3806377327553170669
+      RockPaperScissoSS_14: -6300854448450560312
+      RockPaperScissoSS_15: 5905657430670104011
+      RockPaperScissoSS_16: 3330942898743418029
+      RockPaperScissoSS_17: -6252621963685705264
+      RockPaperScissoSS_18: 4026984140927675857
+      RockPaperScissoSS_19: -2126178399722325490
+      RockPaperScissoSS_2: 6041559322982427550
+      RockPaperScissoSS_20: 7627909636923764234
+      RockPaperScissoSS_21: 2896567551126412713
+      RockPaperScissoSS_22: -144680207392210766
+      RockPaperScissoSS_23: 874041540710463020
+      RockPaperScissoSS_24: 2857341277739274154
+      RockPaperScissoSS_25: 509046539466458399
+      RockPaperScissoSS_26: -7270909771597748031
+      RockPaperScissoSS_27: -2189673970061530703
+      RockPaperScissoSS_28: -7405935714452856971
+      RockPaperScissoSS_29: 594762303656581759
+      RockPaperScissoSS_3: 891323565298567963
+      RockPaperScissoSS_30: -8323492009064719497
+      RockPaperScissoSS_31: -7677349928880819071
+      RockPaperScissoSS_32: -273972132
+      RockPaperScissoSS_4: -6121493905017923888
+      RockPaperScissoSS_5: -6395154396070288847
+      RockPaperScissoSS_6: -423487582306874384
+      RockPaperScissoSS_7: -5465287543036820972
+      RockPaperScissoSS_8: 1846326380073408552
+      RockPaperScissoSS_9: 5848838878752329416
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

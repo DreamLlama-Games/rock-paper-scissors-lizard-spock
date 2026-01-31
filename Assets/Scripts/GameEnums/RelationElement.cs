@@ -5,5 +5,7 @@ namespace GameEnums
         Rock,
         Paper,
         Scissor,
+        Lizard,
+        Spock
     }
 }

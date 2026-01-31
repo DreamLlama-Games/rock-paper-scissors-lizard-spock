@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 5612a9fbb0d8c0241b9e632f59c5d4b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5430974706652663975
+    second: MoveImages_0
+  - first:
+      213: -846279691626607256
+    second: MoveImages_1
+  - first:
+      213: 8241201873710831924
+    second: MoveImages_2
+  - first:
+      213: 6597341925373097737
+    second: MoveImages_3
+  - first:
+      213: 6394793076770901082
+    second: MoveImages_4
+  - first:
+      213: -4741522875910613888
+    second: MoveImages_5
+  - first:
+      213: -5286203483704972134
+    second: MoveImages_6
+  - first:
+      213: 4186490032568165471
+    second: MoveImages_7
+  - first:
+      213: 7140387203158192928
+    second: MoveImages_8
+  - first:
+      213: 4524852727802619631
+    second: MoveImages_9
+  - first:
+      213: 2652334795554337600
+    second: MoveImages_10
+  - first:
+      213: 1980756165869860700
+    second: MoveImages_11
+  - first:
+      213: 1264980140211788797
+    second: MoveImages_12
+  - first:
+      213: -2156010994405494756
+    second: MoveImages_13
+  - first:
+      213: 2172108795933703934
+    second: MoveImages_14
+  - first:
+      213: 8990529711640346103
+    second: MoveImages_15
+  - first:
+      213: 8304961593737516047
+    second: MoveImages_16
+  - first:
+      213: -2657388717541066659
+    second: MoveImages_17
+  - first:
+      213: -3153120519141130579
+    second: MoveImages_18
+  - first:
+      213: -8952497597500132534
+    second: MoveImages_19
+  - first:
+      213: -2998528101485700221
+    second: MoveImages_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MoveImages_0
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 534
+        width: 335
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0d92e98b2be5b40800000000000000
+      internalID: 5430974706652663975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoveImages_1
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 534
+        width: 325
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d08ffaa196144f0800000000000000
+      internalID: -846279691626607256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoveImages_2
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 536
+        width: 336
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43951dcb071ae5270800000000000000
+      internalID: 8241201873710831924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoveImages_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 168
+        width: 351
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907b7a3e6877e8b50800000000000000
+      internalID: 6597341925373097737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoveImages_4
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 163
+        width: 330
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c8e091c6edeb850800000000000000
+      internalID: 6394793076770901082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4098021c1e590a14a9a9cb6b0ad1843a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MoveImages_0: 5430974706652663975
+      MoveImages_1: -846279691626607256
+      MoveImages_10: 2652334795554337600
+      MoveImages_11: 1980756165869860700
+      MoveImages_12: 1264980140211788797
+      MoveImages_13: -2156010994405494756
+      MoveImages_14: 2172108795933703934
+      MoveImages_15: 8990529711640346103
+      MoveImages_16: 8304961593737516047
+      MoveImages_17: -2657388717541066659
+      MoveImages_18: -3153120519141130579
+      MoveImages_19: -8952497597500132534
+      MoveImages_2: 8241201873710831924
+      MoveImages_20: -2998528101485700221
+      MoveImages_3: 6597341925373097737
+      MoveImages_4: 6394793076770901082
+      MoveImages_5: -4741522875910613888
+      MoveImages_6: -5286203483704972134
+      MoveImages_7: 4186490032568165471
+      MoveImages_8: 7140387203158192928
+      MoveImages_9: 4524852727802619631
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
