@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine.UI;
 
 namespace TimerScripts
 {
@@ -8,6 +9,7 @@ namespace TimerScripts
         private float _timeRemaining;
         private bool _isRunning;
         private bool IsFinished => _timeRemaining <= 0f;
+        public float TimeRemaining => _timeRemaining;
         public Action OnTimerComplete { get; set; }
 
         public TimerHandler(float duration, Action onTimerComplete = null)

@@ -7,6 +7,36 @@ namespace UIScripts
         public static readonly RotateShake RotateShakeEffect = new();
         public static readonly PulseInOut PulseInOutEffect = new();
         public static readonly HoverFloat HoverFloatEffect = new();
+        public static readonly MoveBy MoveByEffect = new();
+        public static readonly AppearDisappear AppearDisappearEffect = new();
+        
+        public class AppearDisappear
+        {
+            public LTDescr StartAppearing(CanvasGroup cg, float duration)
+            {
+                cg.alpha = 0f;
+                return LeanTween.alphaCanvas(cg, 1f, duration);
+            }
+
+            public LTDescr StartDisappearing(CanvasGroup cg, float duration)
+            {
+                cg.alpha = 1f;
+                return LeanTween.alphaCanvas(cg, 0f, duration);
+            }
+        }
+        
+        public class MoveBy
+        {
+            public LTDescr StartMoveBy(GameObject moveObject, MoveByInfo moveByInfo)
+            {
+                var startLocalPos = moveObject.transform.localPosition;
+                var target = startLocalPos + new Vector3(moveByInfo.MoveX, moveByInfo.MoveY, 0f);
+
+                var tween = LeanTween.moveLocal(moveObject, target, moveByInfo.Duration)
+                    .setEaseInOutBounce();
+                return tween;
+            }
+        }
         
         public class HoverFloat
         {
@@ -48,12 +78,6 @@ namespace UIScripts
             {
                 return Mathf.SmoothStep(0f, 1f, t);
             }
-
-            public void DisableHoverFloat(LTDescr tween)
-            {
-                if (tween != null)
-                    LeanTween.cancel(tween.id);
-            }
         }
         
         public class PulseInOut
@@ -87,11 +111,6 @@ namespace UIScripts
                         pulseObject.transform.localScale = baseScale;
                     });
                 return tween;
-            }
-
-            public void DisablePulsingInOut(LTDescr tween)
-            {
-                if (tween != null) LeanTween.cancel(tween.id);
             }
         }
         
@@ -132,20 +151,29 @@ namespace UIScripts
 
                 return tween;
             }
+        }
+        
+        public struct MoveByInfo
+        {
+            public readonly float MoveX;
+            public readonly float MoveY;
+            public readonly float Duration;
 
-            public void DisableRotateShake(LTDescr tween)
+            public MoveByInfo(float moveX, float moveY, float duration)
             {
-                if (tween != null) LeanTween.cancel(tween.id);
+                MoveX = moveX;
+                MoveY = moveY;
+                Duration = duration;
             }
         }
         
         public struct HoverFloatInfo
         {
-            public float HoverUpDuration;
-            public float HoverDownDuration;
+            public readonly float HoverUpDuration;
+            public readonly float HoverDownDuration;
 
-            public float MinHoverHeight;
-            public float MaxHoverHeight;
+            public readonly float MinHoverHeight;
+            public readonly float MaxHoverHeight;
 
             public HoverFloatInfo(float  hoverUpDuration, float hoverDownDuration, float minHoverHeight, float maxHoverHeight)
             {
