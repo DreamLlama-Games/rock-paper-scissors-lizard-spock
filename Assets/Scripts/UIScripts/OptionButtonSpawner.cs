@@ -24,7 +24,7 @@ namespace UIScripts
             foreach (var element in elements)
             {
                 var btn = Object.Instantiate(buttonPrefab, buttonsParent.transform);
-                btn.name = element + "Button";
+                btn.name = element.ToString();
 
                 // Set label
                 var label = btn.GetComponentInChildren<TMP_Text>();
@@ -34,10 +34,11 @@ namespace UIScripts
                 var capturedElement = element;
                 btn.onClick.AddListener(() =>
                 {
-                    gameEventManager?.Raise(GameEvent.OptionSelected, btn, capturedElement);
+                    gameEventManager?.Raise(GameEvent.OptionSelected, this, capturedElement);
                     OnButtonClicked(capturedElement);
                 });
                 btn.interactable = false;
+                buttons.Add(btn);
             }
 
             return buttons;

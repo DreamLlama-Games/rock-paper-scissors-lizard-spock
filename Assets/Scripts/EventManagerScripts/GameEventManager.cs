@@ -105,19 +105,33 @@ namespace EventManagerScripts
 
         public void Raise<T>(GameEvent evt, object sender, T payload)
         {
-            if (!ValidateOwnership(evt, sender))
+            if (sender == null)
+            {
+                Debug.LogError("[GameEventManager] Sender cannot be null.");
                 return;
+            }
 
-            var data = _events[evt];
+            var data = GetOrCreate(evt);
 
-            if (data.PayloadType == null)
+            // Lock payload type on first typed raise
+            if (data.PayloadType == null && data.NoArgCallbacks == null)
+            {
+                data.PayloadType = typeof(T);
+            }
+
+            // Ownership
+            data.Owner ??= sender;
+
+            if (!ReferenceEquals(data.Owner, sender))
             {
                 Debug.LogError(
-                    $"[GameEventManager] Event {evt} does not accept payloads."
+                    $"[GameEventManager] Unauthorized raise attempt for {evt}. " +
+                    $"Owner: {data.Owner}, Sender: {sender}"
                 );
                 return;
             }
 
+            // Type safety
             if (data.PayloadType != typeof(T))
             {
                 Debug.LogError(

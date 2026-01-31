@@ -49,7 +49,7 @@ namespace UIScripts
         private readonly ScoreViewHandler _scoreViewHandler = new();
         
         //Event Manager
-        private GameEventManager _eventManager;
+        private readonly GameEventManager _eventManager = new();
 
         private void Start()
         {
@@ -60,17 +60,17 @@ namespace UIScripts
 
         private void StartGame()
         {
-            _eventManager?.Raise(GameEvent.GameStarted,this);
+            _eventManager.Raise(GameEvent.GameStarted,this);
         }
 
         private void EndGame()
         {
-            _eventManager?.Raise(GameEvent.GameEnded,this);
+            _eventManager.Raise(GameEvent.GameEnded,this);
         }
 
         private void InitializeGameLogic()
         {
-            _gameLogicHandler.Initialize(_eventManager);
+            _gameLogicHandler.Initialize(_eventManager,matrix);
         }
 
         private void InitializeHandlers()
@@ -85,6 +85,7 @@ namespace UIScripts
 
         private void Update()
         {
+            _gameLogicHandler.Tick(Time.deltaTime);
             _timerViewHandler.Tick(Time.deltaTime);
         }
     }

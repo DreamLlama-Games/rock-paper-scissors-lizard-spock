@@ -1,4 +1,5 @@
 ﻿using EventManagerScripts;
+using GameEnums;
 using TimerScripts;
 using UnityEngine.UI;
 
@@ -12,14 +13,35 @@ namespace UIScripts.UIViewHandlers
 
         public void Initialize(GameEventManager eventManager, Slider slider, float maxDuration)
         {
-            _eventManager = eventManager;
+            _timerHandler = new TimerHandler(maxDuration,TimerEnd);
+            
+            _timerSlider = slider;
             _timerSlider.maxValue = maxDuration;
             _timerSlider.value = maxDuration;
+            
+            _eventManager = eventManager;
+            Subscribe();
         }
 
         private void Subscribe()
         {
-            
+            _eventManager?.Subscribe(GameEvent.GameStarted, GameStarted);
+            _eventManager?.Subscribe(GameEvent.NewRoundStarted, () =>
+            {
+                ResetTimer();
+                StartTimer();
+            });
+            _eventManager?.Subscribe<RelationElement>(GameEvent.OptionSelected, _ => PauseTimer());
+        }
+
+        private void GameStarted()
+        {
+            StartTimer();
+        }
+
+        private void TimerEnd()
+        {
+            _eventManager?.Raise(GameEvent.TimerEnded,this);
         }
 
         private void StartTimer() => _timerHandler.StartTimer();
@@ -36,7 +58,6 @@ namespace UIScripts.UIViewHandlers
         {
             _timerHandler.Tick(deltaTime);
             _timerSlider.value = _timerHandler.TimeRemaining;
-            
         }
     }
 }
